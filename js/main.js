@@ -81,24 +81,52 @@ autoSlider(index)
 // }, 10000)
 
 
-// const modal = document.querySelector('.modal')
-// const modalTrigger = document.querySelector('#btn-get')
-// const closeModalButton = document.querySelector('.modal_close')
+const modal = document.querySelector('.modal')
+const modalTrigger = document.querySelector('#btn-get')
+const closeModalButton = document.querySelector('.modal_close')
 
-// const openModal = () => {
-//   modal.style.display = 'block'
-//   document.body.style.overflow = 'hidden'
-// }
+const openModal = () => {
+  modal.style.display = 'block'
+  document.body.style.overflow = 'hidden'
+}
 
-// const closeModal = () => {
-//   modal.style.display = 'none'
-//   document.body.style.overflow = ''
-// }
+const closeModal = () => {
+  modal.style.display = 'none'
+  document.body.style.overflow = ''
+}
 
-// modalTrigger.onclick = () => openModal()
-// closeModalButton.onclick = () => closeModal()
+modalTrigger.onclick = () => openModal()
+closeModalButton.onclick = () => closeModal()
 // modal.onclick = (event) => event.target === modal && closeModal()
 
+// POST DATA
+
+const form = document.querySelector('form')
+
+const postdata = (form) => {
+  form.onsubmit = (event) => {
+    event.preventDefault()
+    const request = new XMLHttpRequest()
+    request.open('POST', 'server.php')
+    request.setRequestHeader('Content-type', 'application/json')
+
+    const formData = new formData(form)
+    const obj = {}
+    formData.forEach((item, i) => {
+      obj[i] = item
+    })
+    const json = JSON.stringify(obj)
+    request.send(json)
+    request.onload = () => {
+      if (request.status === 200) {
+        console.log(request.response);
+      } else {
+        console.log('ERROR')
+      }
+    }
+  }
+}
+postdata(form)
 
 // const scrollOpenModal = () => {
 //   const scrollPosition = document.documentElement.scrollTop

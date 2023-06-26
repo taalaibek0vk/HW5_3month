@@ -1,21 +1,78 @@
 // REG EXP
-const phoneInput = document.querySelector('#phone_input')
-const phoneButton = document.querySelector('#phone_button')
-const phoneResult = document.querySelector('#phone_result')
+// const phoneInput = document.querySelector('#phone_input')
+// const phoneButton = document.querySelector('#phone_button')
+// const phoneResult = document.querySelector('#phone_result')
 
-const regExp = /^\+996 \d{3} \d{2}-\d{2}-\d{2}$/
+// const regExp = /^\+996 \d{3} \d{2}-\d{2}-\d{2}$/
 
-phoneButton.onclick = () => {
-  if (regExp.test(phoneInput.value)) {
-    phoneResult.innerHTML = 'YOUR NUMBER IS VALID!'
-    phoneResult.style.color = 'green'
-  } else {
-    phoneResult.innerHTML = 'YOUR NUMBER IS NOT VALID'
-    phoneResult.style.color = 'red'
-  }
-}
+// phoneButton.onclick = () => {
+//   if (regExp.test(phoneInput.value)) {
+//     phoneResult.innerHTML = 'YOUR NUMBER IS VALID!'
+//     phoneResult.style.color = 'green'
+//   } else {
+//     phoneResult.innerHTML = 'YOUR NUMBER IS NOT VALID'
+//     phoneResult.style.color = 'red'
+//   }
+// }
 
 // TAB SLIDER
+
+
+
+// STOPWATCH
+// const minutesBlock = document.querySelector('#minutes'),
+//   secondsBlock = document.querySelector('#seconds'),
+//   mlSecondsBlock = document.querySelector('#ml-seconds'),
+//   startButton = document.querySelector('#start'),
+//   stopButton = document.querySelector('#stop'),
+//   resetButton = document.querySelector('#reset')
+
+// let interval
+// let minutes = 0
+// let seconds = 0
+// let mlSeconds = 0
+
+// const startTimer = () => {
+//   mlSeconds++
+//   mlSeconds <= 99 && (mlSecondsBlock.innerHTML = mlSeconds)
+//   mlSeconds == 100 && (mlSecondsBlock.innerHTML = '00')
+
+//   mlSecondsBlock.innerHTML = `0${mlSeconds}`
+//   mlSeconds > 9 && (mlSecondsBlock.innerHTML = mlSeconds)
+//   if (mlSeconds > 99) {
+//     seconds++
+//     secondsBlock.innerHTML = `0${seconds}`
+//     mlSeconds = 0
+//   }
+//   seconds > 9 && (secondsBlock.innerHTML = seconds)
+//   if (seconds > 59) {
+//     minutes++
+//     minutesBlock.innerHTML = `0${minutes}`
+//     seconds = 0
+//     secondsBlock.innerHTML = `0${seconds}`
+//   }
+//   minutes > 9 && (minutesBlock.innerHTML = minutes)
+// }
+
+// startButton.onclick = () => {
+//   clearInterval(interval)
+//   interval = setInterval(startTimer, 10)
+// }
+
+// stopButton.onclick = () => {
+//   clearInterval(interval)
+// }
+
+// resetButton.onclick = () => {
+//   clearInterval(interval)
+//   minutes = 0
+//   seconds = 0
+//   mlSeconds = 0
+//   minutesBlock.innerHTML = '00'
+//   secondsBlock.innerHTML = '00'
+//   mlSecondsBlock.innerHTML = '00'
+// }
+
 
 const tabContent = document.querySelectorAll('.tab_content_block')
 const tabsParent = document.querySelector('.tab_content_items')
@@ -48,7 +105,6 @@ tabsParent.onclick = (event) => {
 }
 
 let index = 0
-
 const autoSlider = (i = 0) => {
   setInterval(() => {
     i++
@@ -98,4 +154,3 @@ autoSlider(index)
 //   }
 // }
 // window.addEventListener('scroll', scrollOpenModal)
-

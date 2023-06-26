@@ -1,21 +1,21 @@
 // GMAIL
-const emailInput = document.querySelector('#emailInput')
-const emailCheck = document.querySelector('#emailCheck')
-const emailResult = document.querySelector('.emailResult')
+// const emailInput = document.querySelector('#emailInput')
+// const emailCheck = document.querySelector('#emailCheck')
+// const emailResult = document.querySelector('.emailResult')
 
-const regExp = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i
-emailCheck.onclick = () => {
-  if (regExp.test(emailInput.value)) {
-    emailResult.innerHTML = 'Удалось найти аккаунт'
-    emailResult.style.color = 'green'
-  } else {
-    emailResult.innerHTML = 'Не удалось найти аккаунт'
-    emailResult.style.color = 'red'
-  }
-}
+// const regExp = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i
+// emailCheck.onclick = () => {
+//   if (regExp.test(emailInput.value)) {
+//     emailResult.innerHTML = 'Удалось найти аккаунт'
+//     emailResult.style.color = 'green'
+//   } else {
+//     emailResult.innerHTML = 'Не удалось найти аккаунт'
+//     emailResult.style.color = 'red'
+//   }
+// }
 
 
-//   MOVE BLOCK
+//MOVE BLOCK
 // const box = document.querySelector('.child_block')
 // let positionX = 0
 // let positionY = 0
@@ -42,8 +42,7 @@ emailCheck.onclick = () => {
 // move()
 
 
-
-// COUNTER BLOCK
+//COUNTER BLOCK
 // const startBtn = document.querySelector('.start')
 // const stopBtn = document.querySelector('.stop');
 // const resumeBtn = document.querySelector('.resume')
@@ -64,7 +63,6 @@ emailCheck.onclick = () => {
 
 // const stop = () => { clearInterval(interval); }
 // const resume = () => { start() }
-
 // const clear = () => {
 //   clearInterval(interval);
 //   sec = 0;
@@ -78,62 +76,6 @@ emailCheck.onclick = () => {
 
 
 
-// STOPWATCH
-// const minutesBlock = document.querySelector('#minutes'),
-//   secondsBlock = document.querySelector('#seconds'),
-//   mlSecondsBlock = document.querySelector('#ml-seconds'),
-//   startButton = document.querySelector('#start'),
-//   stopButton = document.querySelector('#stop'),
-//   resetButton = document.querySelector('#reset')
-
-// let interval
-// let minutes = 0
-// let seconds = 0
-// let mlSeconds = 0
-
-// const startTimer = () => {
-//   mlSeconds++
-//   mlSeconds <= 99 && (mlSecondsBlock.innerHTML = mlSeconds)
-//   mlSeconds == 100 && (mlSecondsBlock.innerHTML = '00')
-
-//   mlSecondsBlock.innerHTML = `0${mlSeconds}`
-//   mlSeconds > 9 && (mlSecondsBlock.innerHTML = mlSeconds)
-//   if (mlSeconds > 99) {
-//     seconds++
-//     secondsBlock.innerHTML = `0${seconds}`
-//     mlSeconds = 0
-//   }
-//   seconds > 9 && (secondsBlock.innerHTML = seconds)
-//   if (seconds > 59) {
-//     minutes++
-//     minutesBlock.innerHTML = `0${minutes}`
-//     seconds = 0
-//     secondsBlock.innerHTML = `0${seconds}`
-//   }
-//   minutes > 9 && (minutesBlock.innerHTML = minutes)
-// }
-
-// startButton.onclick = () => {
-//   clearInterval(interval)
-//   interval = setInterval(startTimer, 10)
-// }
-
-// stopButton.onclick = () => {
-//   clearInterval(interval)
-// }
-
-// resetButton.onclick = () => {
-//   clearInterval(interval)
-//   minutes = 0
-//   seconds = 0
-//   mlSeconds = 0
-//   minutesBlock.innerHTML = '00'
-//   secondsBlock.innerHTML = '00'
-//   mlSecondsBlock.innerHTML = '00'
-// }
-
-
-
 //                   MODAL
 // 3 пункт
 // const modalShow = setTimeout(() => {
@@ -141,7 +83,7 @@ emailCheck.onclick = () => {
 //   modal.style.display = 'block'
 // }, 10000)
 
-// // 4 пункт
+// 4 пункт
 // const modal = document.querySelector('.modal')
 // const modalTrigger = document.querySelector('#btn-get')
 // const closeModalButton = document.querySelector('.modal_close')
@@ -205,3 +147,60 @@ const convert = (element, targetElement, targetElement2) => {
 convert(som, usd, euro)
 convert(usd, som, euro)
 convert(euro, som, usd)
+
+
+
+// FETCH BLOCK
+
+// 1 Пункт
+const card = document.querySelector('.card')
+const btnNext = document.querySelector('.btn-next')
+const btnPrev = document.querySelector('.btn-prev')
+
+let count = 1
+const request = fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(data => {
+    card.innerHTML = `
+          <h3>${data.title}</h3>
+          <h4>${data.id}</h4>
+          <br>
+          <h4>${data.completed}</h4>
+        `
+  })
+
+btnNext.onclick = () => {
+  if (count <= 199) {
+    count++
+    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+      .then(response => response.json())
+      .then(data => {
+        card.innerHTML = `
+          <h3>${data.title}</h3>
+          <h4>${data.id}</h4>
+          <br>
+          <h4>${data.completed}</h4>
+        `
+      })
+  }
+}
+btnPrev.onclick = () => {
+  if (count >= 2) {
+    count--
+    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+      .then(response => response.json())
+      .then(data => {
+        card.innerHTML = `
+          <h3>${data.title}</h3>
+          <h4>${data.id}</h4>
+          <br>
+          <h4>${data.completed}</h4>
+        `
+      })
+  }
+}
+
+// 2 Пункт
+// const fetchRequest = fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then(response => response.json())
+//   .then(data => console.log(data))

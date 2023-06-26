@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <div class="wrapper">
     <div class="header">
       <div class="container">
@@ -66,25 +65,6 @@
         <button class="clear">Clear</button>
       </div>
     </div>
-    <div class="stopwatch">
-      <div class="container">
-        <h3>Home work 2 </h3>
-        <div class="time">
-          <div class="time_block">
-            <div class="interval" id="minutes">00</div>
-            <div class="break">:</div>
-            <div class="interval" id="seconds">00</div>
-            <div class="break">:</div>
-            <div class="interval" id="ml-seconds">00</div>
-          </div>
-        </div>
-        <div class="time_buttons">
-          <button class="btn" id="start">Start</button>
-          <button class="btn" id="stop">Stop</button>
-          <button class="btn" id="reset">Reset</button>
-        </div>
-      </div>
-    </div>
     <div class="som-block">
       <h3>Конвертер валют</h3>
       <div class="som">
@@ -100,30 +80,35 @@
         <input type="text" id="euro">
       </div>
     </div>
-    <div class="modal">
-      <div class="modal_dialog">
-        <div class="modal_content">
-          <form action="#">
-            <div class="modal_close">&times;</div>
-            <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
-            <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
-            <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal_input">
-            <button class="btn btn_dark btn_min">Перезвонить мне</button>
-          </form>
-        </div>
-      </div>
+    <div class="fetch-block">
+      <button class="btn-prev">Prev</button>
+      <div class="card"></div>
+      <button class="btn-next">Next</button>
     </div>
-    <div class="footer">
-      <div class="container">
-        <a href="https://www.instagram.com/nurdinbuy/" target="_blank">
-          <div class="inner_footer">
-            <h2>Made by NurDinBuy</h2>
-          </div>
-        </a>
+  </div>
+  <div class="modal">
+    <div class="modal_dialog">
+      <div class="modal_content">
+        <form action="#">
+          <div class="modal_close">&times;</div>
+          <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
+          <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
+          <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal_input">
+          <button class="btn btn_dark btn_min">Перезвонить мне</button>
+        </form>
       </div>
     </div>
   </div>
-
+  <div class="footer">
+    <div class="container">
+      <a href="https://www.instagram.com/nurdinbuy/" target="_blank">
+        <div class="inner_footer">
+          <h2>Made by KAIRAT</h2>
+        </div>
+      </a>
+    </div>
+  </div>
+  </div>
 </body>
 <script src="../js/home_works.js"></script>
 

@@ -103,36 +103,6 @@ button:hover {
   color: black;
 }
 
-/* STOP WATCH */
-
-.time {
-    color: rgb(248, 243, 243);
-    display: flex;
-    justify-content: center;
-    font-size: 80px;
-    height: 100px;
-    width: 100%;
-    border-bottom: 1px solid rgb(184, 179, 169);
-    margin-top: 40px;
-}
-
-.time_block {
-    display: flex;
-    width: 500px;
-    justify-content: space-between;
-}
-
-.stopwatch {
-    padding: 100px 0;
-    background: black;
-}
-
-.time_buttons {
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
 /* КОНВЕРТЕР ВАЛЮТ */
 
 .som-block > div {
@@ -146,3 +116,19 @@ button:hover {
 label {
   color: rgb(242, 242, 235);
 }
+
+
+.fetch-block {
+  padding: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  padding-top: 50px;
+  width: 500px;
+  height: 250px;
+  border: yellow 3px solid;
+  border-radius: 10px;
+}
+
