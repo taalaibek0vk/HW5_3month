@@ -116,3 +116,20 @@
     display: flex;
     justify-content: space-between;
 }
+
+.weather-block > div {
+  padding-top: 30px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+.city {
+  font-size: 30px;
+  color: white;
+}
+.temp {
+  padding-left: 50px;
+  color: aqua;
+  font-size: 30px;
+}
